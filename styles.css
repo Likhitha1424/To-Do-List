@@ -1,0 +1,133 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#todo-container {
+    background: linear-gradient(to right, #FFD2A2, #E9E4F0);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 400px;
+    width: 90%;
+}
+
+#todo-header {
+    background: linear-gradient(to right, #DA627D, #FF7E5F);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#todo-list {
+    padding: 20px;
+}
+
+#todo-input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#add-button, .complete-button {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-button {
+    background: linear-gradient(to right, #FC4A1A, #F7B733);
+    color: white;
+}
+
+.complete-button {
+    background: linear-gradient(to right, #2ECC71, #3498DB);
+    color: white;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.delete-button, .complete-button {
+    width: 80px;
+    text-align: center;
+}
+
+.delete-button {
+    background: linear-gradient(to right, #EF473A, #CB2D3E);
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.completed {
+    transform: translateX(100%);
+    transition: transform 1s;
+}
+
+/* New styles for calendar popup */
+#calendar-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Added backdrop filter for blur effect */
+}
+
+.calendar {
+    font-family: 'Verdana', sans-serif;
+    background: linear-gradient(to right, #DA627D, #FF7E5F);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out; /* Added transition effect */
+}
+
+.calendar-header {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.calendar-content {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #todo-container {
+        max-width: 90%;
+    }
+}
